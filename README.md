@@ -5,20 +5,40 @@ This project now has a browser server and a lightweight command-line interface. 
 ## Features
 - URL shortening into unique short codes.
 - Redirection back to the saved long URL.
-- Persistent JSON storage for links and contact submissions.
-- A polished Nintendo-style browser UI for the web flow.
+- Persistent JSON storage for links and contact submissions so that shortened links and contact info survive server restarts.
+- A polished Nintendo-style browser UI for the web flow & some *nostalgia*.
 - A CLI for serving, shortening, resolving, and listing links.
 
 ## CLI Commands
-- Start the server: `cargo run -- serve`
-- Shorten a URL: `cargo run -- shorten "https://example.com"`
-- Resolve a code: `cargo run -- resolve /ABC123`
-- List stored links: `cargo run -- list`
-
+- Start the server: 
+```bash
+cargo run -- serve
+```
+- Shorten a URL:
+```bash
+# Replace with desired link
+cargo run -- shorten "https://example.com"
+```
+- Resolve a code:
+```bash
+# Replace with the shortened code
+cargo run -- resolve /ABC123
+```
+- List stored links:
+```bash
+cargo run -- list
+```
 The default command is `serve`, so `cargo run` still starts the web server.
 
-## Browser UI
-The served pages in `public/` were redesigned to match the console-chrome inspiration in `DESIGN.md`: layered periwinkle panels, carbon nav bars, amber action chips, bold outlined hero text, and compact card-style sections.
+## Setup
+1. Clone the repository.
+```bash
+git clone https://github.com/bandhuamajdoor/url-shortener.git
+cd url-shortener
+```
+2. Install Rust if needed.
+3. Run the server: `cargo run`
+4. Use the CLI commands above when you want terminal-based access.
 
 ## Technologies Used
 - Rust
@@ -26,9 +46,3 @@ The served pages in `public/` were redesigned to match the console-chrome inspir
 - rand
 - clap
 - Standard library TCP networking
-
-## Setup
-1. Clone the repository.
-2. Install Rust if needed.
-3. Run the server: `cargo run`
-4. Use the CLI commands above when you want terminal-based access.
