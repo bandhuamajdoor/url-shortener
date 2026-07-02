@@ -2,40 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 Not Found - My Rust Server</title>
+    <title>404 Not Found - URL Shortener</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --primary: #e60012;
+            --signal: #f68d1f;
+            --amber: #ecab37;
+            --canvas: #7a8aba;
+            --canvas-soft: #9fbee7;
+            --surface: #ffffff;
+            --carbon: #21242e;
+            --ink: #21242e;
+            --shadow: rgba(33, 36, 46, 0.22);
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            background-color: #fef2f2;
-            font-family: 'Segoe UI', sans-serif;
-            color: #b91c1c;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.34), transparent 35%),
+                linear-gradient(180deg, #9cb2dc 0%, var(--canvas) 22%, #8d9fcd 58%, #7387b8 100%);
+            display: grid;
+            place-items: center;
+            padding: 20px 12px;
+        }
+
+        .card {
+            width: min(780px, 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(238,242,251,0.98));
+            border: 1px solid rgba(61, 79, 151, 0.4);
+            box-shadow: 0 16px 32px var(--shadow);
+            padding: 28px;
             text-align: center;
         }
+
+        .eyebrow {
+            display: inline-flex;
+            background: var(--carbon);
+            color: var(--canvas-soft);
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
         h1 {
-            font-size: 3rem;
+            margin: 14px 0 10px;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            line-height: 0.95;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow:
+                -3px -3px 0 var(--carbon),
+                3px -3px 0 var(--carbon),
+                -3px 3px 0 var(--carbon),
+                3px 3px 0 var(--carbon),
+                0 6px 0 rgba(33, 36, 46, 0.55);
         }
+
         p {
-            font-size: 1.2rem;
+            margin: 0;
+            color: #394968;
+            line-height: 1.55;
+            font-size: 14px;
         }
+
+        .panel {
+            margin: 18px auto 0;
+            max-width: 440px;
+            background: linear-gradient(180deg, #fff, #eef2fb);
+            border: 1px solid rgba(61, 79, 151, 0.24);
+            border-radius: 4px;
+            padding: 18px;
+        }
+
+        .panel strong {
+            display: block;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
         a {
-            color: #7f1d1d;
-            font-weight: bold;
+            display: inline-flex;
+            margin-top: 18px;
+            background: linear-gradient(180deg, #f3be53, var(--amber));
+            color: var(--carbon);
+            padding: 12px 16px;
+            border-radius: 4px;
             text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
+
         a:hover {
-            text-decoration: underline;
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Oops! The page you're looking for doesn't exist.</p>
-    <a href="/index">Back to Home</a>
+    <section class="card">
+        <div class="eyebrow">Error panel</div>
+        <h1>404 - Page not found</h1>
+        <p>The page you asked for does not exist, but the console-chrome interface is still ready at home.</p>
+        <div class="panel">
+            <strong>Suggestion</strong>
+            <p>Head back to the home page to shorten a URL or use the contact page if you need help with the server.</p>
+        </div>
+        <a href="/index">Back to Home</a>
+    </section>
 </body>
 </html>

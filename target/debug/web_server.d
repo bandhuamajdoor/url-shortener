@@ -1,0 +1,1 @@
+/home/majdoor/Codes/url-shortener/target/debug/web_server: /home/majdoor/Codes/url-shortener/src/contact.rs /home/majdoor/Codes/url-shortener/src/main.rs /home/majdoor/Codes/url-shortener/src/methods.rs /home/majdoor/Codes/url-shortener/src/redirection.rs /home/majdoor/Codes/url-shortener/src/shorten.rs
